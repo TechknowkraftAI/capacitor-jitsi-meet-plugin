@@ -3,8 +3,37 @@ import { WebPlugin } from '@capacitor/core';
 import type { CustomJitsiMeetPlugin } from './definitions';
 
 export class CustomJitsiMeetWeb extends WebPlugin implements CustomJitsiMeetPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
-  }
+  // @ts-ignore
+  async joinConference(options: {
+    roomName: string;
+    url: string;
+    token?: string;
+    channelLastN?: string;
+    displayName?: string;
+    subject?: string;
+    email?: string;
+    avatarURL?: string;
+    startWithAudioMuted?: boolean;
+    startWithVideoMuted?: boolean;
+    chatEnabled?: boolean;
+    inviteEnabled?: boolean;
+    callIntegrationEnabled?: boolean;
+    recordingEnabled?: boolean;
+    liveStreamingEnabled?: boolean;
+    screenSharingEnabled?: boolean;
+    featureFlags?: any;
+    configOverrides?: any;
+  }): Promise<{
+      success?: boolean;
+  }> {
+    throw this.unavailable('the web implementation is not available. Please use Jitsi Meet API to implement Jitsi in web app');
+  };
+  // @ts-ignore
+  async leaveConference(options?: {}): Promise<{ success?: boolean; }> {
+    throw this.unavailable('the web implementation is not available. Please use Jitsi Meet API to implement Jitsi in web app');
+  };
 }
+
+const CustomJitsiMeet = new CustomJitsiMeetWeb();
+
+export { CustomJitsiMeet };
