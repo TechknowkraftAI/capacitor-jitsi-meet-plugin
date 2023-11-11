@@ -1,12 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aieze.jitsi.meet">
-    <activity android:name="com.aieze.jitsi.meet.JitsiActivity"
-              android:excludeFromRecents="true"
-              android:supportsPictureInPicture="true"
-              android:resizeableActivity="true"
-              android:launchMode="singleTask"
-              android:theme="@style/AppTheme.NoActionBar"
-              android:windowSoftInputMode="adjustResize"
-              android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode">
-    </activity>
+    <application android:theme="@style/AppTheme">
+        <activity android:name="com.aieze.jitsi.meet.JitsiActivity"
+                android:excludeFromRecents="true"
+                android:supportsPictureInPicture="true"
+                android:resizeableActivity="true"
+                android:launchMode="singleTask"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="adjustResize"
+                android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode">
+        </activity>
+    </application>
 </manifest>
