@@ -1,7 +1,7 @@
 {
-  "name": "capacitor-angular-jitsi-meet-plugin",
+  "name": "capacitor-jitsi-meet-plugin",
   "version": "0.0.1",
-  "description": "Custom plugin for Jitsi meet in angular",
+  "description": "Custom plugin for Jitsi meet",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -17,10 +17,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AIEZE-AI/capacitor-angular-jitsi-meet-plugin.git.git"
+    "url": "git+https://github.com/AIEZE-AI/capacitor-jitsi-meet-plugin.git.git"
   },
   "bugs": {
-    "url": "https://github.com/AIEZE-AI/capacitor-angular-jitsi-meet-plugin.git/issues"
+    "url": "https://github.com/AIEZE-AI/capacitor-jitsi-meet-plugin.git/issues"
   },
   "keywords": [
     "capacitor",

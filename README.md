@@ -1,11 +1,11 @@
-# capacitor-angular-jitsi-meet-plugin
+# capacitor-jitsi-meet-plugin
 
 Custom plugin for Jitsi meet in angular
 
 ## Install
 
 ```bash
-npm install capacitor-angular-jitsi-meet-plugin
+npm install capacitor-jitsi-meet-plugin
 npx cap sync
 ```
 
