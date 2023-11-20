@@ -1,9 +1,12 @@
 package com.aieze.jitsi.meet;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import androidx.annotation.RequiresApi;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -13,9 +16,13 @@ import com.getcapacitor.annotation.Permission;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
+
+import org.jitsi.meet.sdk.BroadcastIntentHelper;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 import org.jitsi.meet.sdk.JitsiMeetUserInfo;
 import org.json.JSONException;
+
+import timber.log.Timber;
 
 @CapacitorPlugin(
     name = "CustomJitsiMeet",
