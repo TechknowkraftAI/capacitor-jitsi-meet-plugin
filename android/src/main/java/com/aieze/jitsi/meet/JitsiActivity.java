@@ -94,6 +94,9 @@ public class JitsiActivity extends JitsiMeetActivity {
         Intent intent = null;
         if (name.equals("onConferenceTerminate")) {
             if (data != null) {
+                JitsiMeetConferenceOptions jitsiMeetConferenceOptions = getConferenceOptions(getIntent());
+                String endMeetingUrl = jitsiMeetConferenceOptions.getFeatureFlags().getString("endMeetingCallBackUrl");
+                new ApiCallTask().execute(endMeetingUrl);
                 intent = new Intent(name);
                 intent.putExtra("eventName", name);
             } else {
