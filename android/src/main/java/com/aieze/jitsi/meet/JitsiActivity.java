@@ -96,7 +96,7 @@ public class JitsiActivity extends JitsiMeetActivity {
             if (data != null) {
                 JitsiMeetConferenceOptions jitsiMeetConferenceOptions = getConferenceOptions(getIntent());
                 String endMeetingUrl = jitsiMeetConferenceOptions.getFeatureFlags().getString("endMeetingCallBackUrl");
-                boolean isModerator = jitsiMeetConferenceOptions.getFeatureFlags().getBoolean("isModerator");
+                boolean isModerator = jitsiMeetConferenceOptions.getFeatureFlags().getBoolean("isModerator", false);
                 if (isModerator) {
                     new ApiCallTask().execute(endMeetingUrl);
                 } else {
