@@ -120,7 +120,7 @@ public class CustomJitsiMeetPlugin: CAPPlugin {
     }
 }
 
-extension Jitsi: CustomJitsiMeetViewControllerDelegate {
+extension CustomJitsiMeetPlugin: CustomJitsiMeetViewControllerDelegate {
     @objc func onConferenceJoined() {
         self.bridge?.triggerJSEvent(eventName: "onConferenceJoined", target: "window");
     }
