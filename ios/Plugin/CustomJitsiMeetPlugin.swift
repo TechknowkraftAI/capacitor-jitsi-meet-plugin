@@ -1,5 +1,7 @@
 import Foundation
 import Capacitor
+import JitsiMeetSDK
+import UIKit
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
