@@ -79,7 +79,7 @@ protocol JitsiMeetViewControllerDelegate: AnyObject {
 }
 
 // MARK: JitsiMeetViewDelegate
-extension JitsiMeetViewController: JitsiMeetViewDelegate {
+extension CustomJitsiMeetViewController: JitsiMeetViewDelegate {
 
     @objc public func conferenceJoined(_ data: [AnyHashable : Any]!) {
         delegate?.onConferenceJoined()
