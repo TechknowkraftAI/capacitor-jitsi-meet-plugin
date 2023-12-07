@@ -15,7 +15,7 @@ public class CustomJitsiMeetPlugin: CAPPlugin {
     @objc func joinConference(_ call: CAPPluginCall) {
 
         let podBundle = Bundle(for: CustomJitsiMeetViewController.self)
-        let bundleURL = podBundle.url(forResource: "Plugin", withExtension: "bundle")
+        let bundleURL = podBundle.url(forResource: "CustomJitsiMeetPlugin", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
 
         let storyboard = UIStoryboard(name: "CustomJitsiMeet", bundle: bundle)
