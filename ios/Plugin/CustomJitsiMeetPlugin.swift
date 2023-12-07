@@ -18,7 +18,7 @@ public class CustomJitsiMeetPlugin: CAPPlugin {
         let bundleURL = podBundle.url(forResource: "Plugin", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
 
-        let storyboard = UIStoryboard(name: "JitsiMeet", bundle: bundle)
+        let storyboard = UIStoryboard(name: "CustomJitsiMeet", bundle: bundle)
         self.jitsiMeetViewController = storyboard.instantiateViewController(withIdentifier: "jitsiMeetStoryBoardID") as? CustomJitsiMeetViewController
         guard let url = call.options["url"] as? String else {
             call.reject("Must provide an url")
