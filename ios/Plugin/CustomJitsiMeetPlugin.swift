@@ -9,17 +9,17 @@ import UIKit
  */
 @objc(CustomJitsiMeetPlugin)
 public class CustomJitsiMeetPlugin: CAPPlugin {
-    var jitsiMeetViewController: JitsiMeetViewController?
+    var jitsiMeetViewController: CustomJitsiMeetViewController?
     private let implementation = CustomJitsiMeet()
 
     @objc func joinConference(_ call: CAPPluginCall) {
 
-        let podBundle = Bundle(for: JitsiMeetViewController.self)
+        let podBundle = Bundle(for: CustomJitsiMeetViewController.self)
         let bundleURL = podBundle.url(forResource: "Plugin", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
 
         let storyboard = UIStoryboard(name: "JitsiMeet", bundle: bundle)
-        self.jitsiMeetViewController = storyboard.instantiateViewController(withIdentifier: "jitsiMeetStoryBoardID") as? JitsiMeetViewController
+        self.jitsiMeetViewController = storyboard.instantiateViewController(withIdentifier: "jitsiMeetStoryBoardID") as? CustomJitsiMeetViewController
         guard let url = call.options["url"] as? String else {
             call.reject("Must provide an url")
             return
