@@ -98,7 +98,8 @@ public class JitsiActivity extends JitsiMeetActivity {
                 String endMeetingUrl = jitsiMeetConferenceOptions.getFeatureFlags().getString("endMeetingCallBackUrl");
                 boolean isModerator = jitsiMeetConferenceOptions.getFeatureFlags().getBoolean("isModerator", false);
                 if (isModerator) {
-                    new ApiCallTask().execute(endMeetingUrl);
+                    Timber.tag(TAG).d("End Meeting url has been disabled for now");
+//                  new ApiCallTask().execute(endMeetingUrl);
                 } else {
                     name = "onConferenceLeft";
                 }
