@@ -21,19 +21,19 @@ public class CustomJitsiMeetViewController: UIViewController, UIGestureRecognize
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::viewDidLoad");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::viewDidLoad");
         openJitsiMeet();
     }
 
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::viewWillTransition");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::viewWillTransition");
     }
 
     func openJitsiMeet() {
         cleanUp()
 
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::openJitsiMeet");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::openJitsiMeet");
 
         // create and configure the absorbPointerView and jitsimeet view
         let jitsiMeetView = JitsiMeetView()
@@ -54,18 +54,18 @@ public class CustomJitsiMeetViewController: UIViewController, UIGestureRecognize
 
     public override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::viewDidDisappear");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::viewDidDisappear");
         cleanUp();
     }
 
     fileprivate func cleanUp() {
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::cleanUp");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::cleanUp");
         jitsiMeetView?.removeFromSuperview()
         jitsiMeetView = nil
     }
 
     public func leave() {
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::leave");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::leave");
         let jitsiMeetView = JitsiMeetView()
         self.jitsiMeetView = jitsiMeetView
         jitsiMeetView.hangUp()
@@ -79,15 +79,15 @@ protocol JitsiMeetViewControllerDelegate: AnyObject {
 }
 
 // MARK: JitsiMeetViewDelegate
-extension JitsiMeetViewController: JitsiMeetViewDelegate {
+extension CustomJitsiMeetViewController: JitsiMeetViewDelegate {
 
     @objc public func conferenceJoined(_ data: [AnyHashable : Any]!) {
         delegate?.onConferenceJoined()
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::conference joined.");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::conference joined.");
     }
 
     @objc public func ready(toClose: [AnyHashable : Any]!) {
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::ready to close");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::ready to close");
         delegate?.onConferenceLeft()
         self.cleanUp()
 
@@ -95,7 +95,7 @@ extension JitsiMeetViewController: JitsiMeetViewDelegate {
     }
 
     @objc public func conferenceTerminated(_ data: [AnyHashable : Any]!) {
-        print("[Jitsi Plugin Native iOS]: JitsiMeetViewController::conference terminated");
+        print("[Jitsi Plugin Native iOS]: CustomJitsiMeetViewController::conference terminated");
         delegate?.onConferenceLeft()
         self.cleanUp()
 

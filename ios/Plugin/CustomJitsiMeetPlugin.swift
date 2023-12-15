@@ -1,5 +1,7 @@
 import Foundation
 import Capacitor
+import JitsiMeetSDK
+import UIKit
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -7,17 +9,17 @@ import Capacitor
  */
 @objc(CustomJitsiMeetPlugin)
 public class CustomJitsiMeetPlugin: CAPPlugin {
-    var jitsiMeetViewController: JitsiMeetViewController?
+    var jitsiMeetViewController: CustomJitsiMeetViewController?
     private let implementation = CustomJitsiMeet()
 
     @objc func joinConference(_ call: CAPPluginCall) {
 
-        let podBundle = Bundle(for: JitsiMeetViewController.self)
-        let bundleURL = podBundle.url(forResource: "Plugin", withExtension: "bundle")
+        let podBundle = Bundle(for: CustomJitsiMeetViewController.self)
+        let bundleURL = podBundle.url(forResource: "CustomJitsiMeet", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
 
-        let storyboard = UIStoryboard(name: "JitsiMeet", bundle: bundle)
-        self.jitsiMeetViewController = storyboard.instantiateViewController(withIdentifier: "jitsiMeetStoryBoardID") as? JitsiMeetViewController
+        let storyboard = UIStoryboard(name: "CustomJitsiMeet", bundle: bundle)
+        self.jitsiMeetViewController = storyboard.instantiateViewController(withIdentifier: "jitsiMeetStoryBoardID") as? CustomJitsiMeetViewController
         guard let url = call.options["url"] as? String else {
             call.reject("Must provide an url")
             return
@@ -118,7 +120,7 @@ public class CustomJitsiMeetPlugin: CAPPlugin {
     }
 }
 
-extension Jitsi: CustomJitsiMeetViewControllerDelegate {
+extension CustomJitsiMeetPlugin: JitsiMeetViewControllerDelegate {
     @objc func onConferenceJoined() {
         self.bridge?.triggerJSEvent(eventName: "onConferenceJoined", target: "window");
     }
