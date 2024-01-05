@@ -53,10 +53,13 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
-    implementation files(':jitsi-meet-sdk-99.0.0')
+    implementation files('libs/jitsi-meet-sdk-99.0.0.aar')
 //    implementation ('org.jitsi.react:jitsi-meet-sdk:+') { transitive = true }
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
 }
