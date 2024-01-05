@@ -42,10 +42,7 @@ android {
 }
 
 repositories {
-    maven { url "file:/sdk/tmp/repo" }
-    maven {
-        url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
-    }
+    maven { url "https://github.com/aieze/custom-jitsi-maven-repository/tree/main/releases" }
     google()
     mavenCentral()
 }
