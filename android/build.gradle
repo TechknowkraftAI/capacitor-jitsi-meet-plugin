@@ -51,7 +51,7 @@ repositories {
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation project(':capacitor-android')
     implementation files('libs/jitsi-meet-sdk-99.0.0.aar')
 //    implementation ('org.jitsi.react:jitsi-meet-sdk:+') { transitive = true }
@@ -61,5 +61,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation "com.facebook.react:react-native:0.17.0" // Use the correct version
+
 
 }
