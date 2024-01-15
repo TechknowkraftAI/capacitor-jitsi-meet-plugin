@@ -43,7 +43,7 @@ android {
 
 repositories {
     maven {
-        url "https://gitlab.aieze.in/aieze-public-products/custom-jitsi-maven-repository/-/tree/main/releases"
+        url "https://github.com/aieze/custom-jitsi-maven-repository/tree/main/releases"
     }
     google()
     mavenCentral()
